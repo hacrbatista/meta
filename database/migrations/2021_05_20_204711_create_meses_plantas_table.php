@@ -15,7 +15,11 @@ class CreateMesesPlantasTable extends Migration
     {
         Schema::create('meses_plantas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('mes_id')->unsigned();
+            $table->foreignId('planta_id')->unsigned();
+            
+            $table->foreign('mes_id')->references('id')->on('meses');
+            $table->foreign('planta_id')->references('id')->on('plantas');
         });
     }
 

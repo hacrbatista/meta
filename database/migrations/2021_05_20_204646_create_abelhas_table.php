@@ -15,7 +15,7 @@ class CreateAbelhasTable extends Migration
     {
         Schema::create('abelhas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nome')->unique();
         });
     }
 

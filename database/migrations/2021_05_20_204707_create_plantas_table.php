@@ -15,7 +15,10 @@ class CreatePlantasTable extends Migration
     {
         Schema::create('plantas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nome')->unique();
+            $table->foreignId('abelha_id')->unsigned();
+
+            $table->foreign('abelha_id')->references('id')->on('abelhas');
         });
     }
 

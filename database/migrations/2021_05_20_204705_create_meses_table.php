@@ -15,7 +15,7 @@ class CreateMesesTable extends Migration
     {
         Schema::create('meses', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nome')->unique();
         });
     }
 
