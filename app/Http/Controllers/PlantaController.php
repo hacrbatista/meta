@@ -15,7 +15,6 @@ class PlantaController extends Controller
     public function __construct()
     {
         $this->model = Planta::class;
-        $this->plantas = Planta::all()->toArray();
         $this->abelhas = Abelha::all()->toArray();
         $this->meses = Mes::all()->toArray();
     }
