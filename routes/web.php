@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PlantaController::class, 'listar'])->name('planta.listar');
+Route::get('planta-adicionar', [PlantaController::class, 'adicionar'])->name('planta.adicionar');
+Route::post('planta-registrar', [PlantaController::class, 'registrar'])->name('planta.registrar');
